@@ -1,0 +1,29 @@
+{
+  "name": "zuriTask5CRUDApp",
+  "version": "1.0.0",
+  "description": "Create Zuri Task5 CRUD app with database &amp; no authentication using Nodejs/Express/Mongoose",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/franeldev/zuriTask5CRUDApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/franeldev/zuriTask5CRUDApp/issues"
+  },
+  "homepage": "https://github.com/franeldev/zuriTask5CRUDApp#readme",
+  "dependencies": {
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1",
+    "express-validator": "^6.11.1",
+    "mongoose": "^5.12.8"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
