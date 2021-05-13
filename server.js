@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json({ extended: false }));
 
 // Create a basic express route
-app.get('/', (req, res) => res.json({ message: 'CRUD App with Database' }));
+app.get('/', (req, res) => res.json({ message: 'CRUD App with Database is UNDER CONSTRUCTION' }));
 
 // PORT
 const port = process.env.PORT || PORT;
