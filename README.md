@@ -5,7 +5,7 @@ Create Zuri Task5 CRUD app with database &amp; no authentication using Nodejs/Ex
 
 ### Action Map:
 
-1. Set up our package environment and install the dependencies
+1. Set up the package environment and install the dependencies
 - `npm init -y`
 - `npm install express express-validator dotenv mongoose`
 - `npm i -D nodemon`
