@@ -2,7 +2,7 @@
   "name": "zuriTask5CRUDApp",
   "version": "1.0.0",
   "description": "Create Zuri Task5 CRUD app with database &amp; no authentication using Nodejs/Express/Mongoose",
-  "main": "server.js",
+  "main": "src/server.js",
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
