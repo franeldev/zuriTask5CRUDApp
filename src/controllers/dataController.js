@@ -35,7 +35,7 @@ exports.fetch = (req, res) => {
   // Fetch all Data
   Userdb.find({}, (err, data) => {
     if (err) {
-      return res.status(500).json({ messsage: err })
+      return res.status(404).json({ messsage: err })
     } else {
       return res.status(200).json({ data })
     }
