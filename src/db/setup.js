@@ -11,6 +11,7 @@ const { connectionString, MONGO_LOCAL_URI } = process.env;
 const connectDB = async () => {
   try {
     await mongoose.connect(connectionString || MONGO_LOCAL_URI, {
+      // This property will stop unwanted warning in the console or client side
       useNewUrlParser: true,
       useCreateIndex: true,
       useUnifiedTopology: true,
