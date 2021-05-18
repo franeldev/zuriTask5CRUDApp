@@ -61,23 +61,13 @@ exports.fetchOne = (req, res) => {
 
 // Update a new identified user by user id
 exports.update = (req, res) => {
-  if(!req.body) {
-    return res
-      .status(400)
-      .json({ message: "Data to update can not be empty" })
-  }
-
   const id = req.params.id;
   Userdb.findByIdAndUpdate(id,req.body, {useFindAndModify: false})
   .then(data => {
-    if(!data) {
-      res.status(404).json({ message: `Cannot Update user with ${id}. Maybe user not found!` })
-    } else {
-      res.status(200).json({ message: 'data updated successfully', data })
-    }
+    return res.status(200).json({ message: 'data updated successfully', data })
   })
   .catch(err => {
-    res.status(500).json({ message: "Error Update user information" })
+    res.status(404).json({ message: `data with id '${id}' was not found!` })
   })
 }
 
@@ -93,13 +83,13 @@ exports.delete = (req, res) => {
       })
     } else {
       res.json({
-        message: `User with id ${id} was deleted successfully!`
+        message: `data with id '${id}' was deleted successfully!`
       })
     }
   })
   .catch(err => {
     res.status(404).json({ 
-      message: `data with id ${id} was not found!` 
+      message: `data with id '${id}' was not found!` 
     })
   })
 }
