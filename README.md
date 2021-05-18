@@ -23,3 +23,105 @@ Clone the repository and run `npm install` to install all the packages
 Start the server by running `npm start` or `npm run server`
 
 #### Action Map is UNDER CONSTRUCTION, please bear with me!
+
+## Endpoints
+
+Here's the URI/URL where api/service can be accessed by a client application
+### 1. Create Data
+
+Adds a new user to the database & get the response
+
+| @Method  | @Route   | @Link     | @DESCRIPTION                            | 
+| -------- | ------   | --------- | ------------------------                |
+| `POST`   | `'/users`| `heroku`  | `request to /user to create a new user` | 
+
+ERROR Messages
+| @Data Request                                   | @Data Respone                                                                             |
+| -----------------------------------             | ------------------------                                                                  |
+| ```{"name": "DonJazzy", "email": "jazzyu@gmail.com", "country": "Angola"}``` | ```{"message": "Userdb validation failed: email: jazzd yu@gmail.com is not a valid email"}``` |
+| ```{"name": "DonJazzy", "email": "jazzyu@gmail.com", "country": "Angola"}``` | ```{"message": "E11000 duplicate key error collection: ZuriCrudDb.userdbs index: email_1 dup key: { email: \"jazzyu@gmail.com\" }"``` |
+| ```{"name": "@Don$Jazzy", "email": "hsaaa@gmail.com", "country": "Angola"}``` | ```{"message": "Userdb validation failed: name: String have to contain only alphanumeric with spaces"}"``` |
+
+- **SUCCESS Messages {==} Status : `201 Created`**
+  
+- ***Data Request***
+```
+{
+  "name": "DonJazzy",
+  "email": "jazzyu@gmail.com",
+  "country": "Angola"
+}
+```
+- ***Data Respone***
+```
+{
+    "message": "new data created",
+    "data": {
+        "_id": "60a2aea3a043e209ecaa75f8",
+        "name": "DonJazzy",
+        "email": "jazzyu@gmail.com",
+        "country": "Angola",
+        "__v": 0
+    }
+}
+```
+
+
+
+### 2. Read Data
+
+- **a FETCH ALL DATA**
+<p>Retrieve and return all users</p>
+
+| @Method  | @Route   | @Link     | @DESCRIPTION                            | 
+| -------- | ------   | --------- | ------------------------                |
+| `GET`   | `'/users`| `heroku`   | `GET request from (/users) to fetch all users` | 
+
+**<p>ERROR Messages {==} Status : `404 Not Found`</p>**
+| @URL Request                                   | @Data Respone                                                                             |
+| -----------------------------------             | ------------------------                                                                  |
+| ```http://localhost:9005/userss``` | ```{"message": "Cannot GET /userss"}``` |
+| ```~~{"name": "DonJazzy", "email": "jazzyu@gmail.com", "country": "Angola"}~~``` | ```~~{"message": "E11000 duplicate key error collection: ZuriCrudDb.userdbs index: email_1 dup key: { email: \"jazzyu@gmail.com\" }"~~``` |
+
+- **SUCCESS Messages {==} Status : `200 OK`**
+  
+- ***Data Request***
+```
+NONE
+```
+- ***Data Respone***
+```
+{
+    "data": [
+        {
+            "_id": "60a2aea3a043e209ecaa75f8",
+            "name": "DonJazzy",
+            "email": "jazzyu@gmail.com",
+            "country": "Angola",
+            "__v": 0
+        },
+        {
+            "_id": "60a2d94d5f23373d44e938b7",
+            "name": "Jimmy Jatt",
+            "email": "flyingjet@gmail.com",
+            "country": "Togo",
+            "__v": 0
+        }
+    ]
+}
+```
+
+
+
+
+{
+    "data": [
+        {
+            "_id": "60a2aea3a043e209ecaa75f8",
+            "name": "DonJazzy",
+            "email": "jazzyu@gmail.com",
+            "country": "Angola",
+            "__v": 0
+        }
+    ]
+}
