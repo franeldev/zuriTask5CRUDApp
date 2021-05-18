@@ -1,83 +1,105 @@
 // Setup schema
-const UserData = require('../models/dataModel');
+const Userdb = require('../models/dataModel');
 
-// dataController is the functions that handle the requests and responses extracted from dataRoute.js
-exports.createNewData = (req, res) => { //  createUser
-  // retrive new userData details from req.body
-  UserData.create({
+/* 
+  ==** dataController is the functions that handle the requests and responses extracted from dataRoute.js **==
+*/
+
+// create and save new user
+exports.create = (req, res) => {
+  // validate request
+  // create a instance new Userdb from the Schema and store it in the user variable
+  const user = new Userdb({
     name: req.body.name,
     email: req.body.email,
     country: req.body.country
-  }, (err, newUserData) => {
-    if (err) {
-      return res.status(500).json({ message: err })
-    } else {
-      return res.status(200).json({ message: 'new userData created', newUserData })
-    }
   })
+
+  // save user in the database
+  user
+  .save(user)
+  .then(data => {
+    res.status(201).json({ message: 'new data created', data })
+  })
+  // if the above promise return an error then catch it with the catch method
+  .catch(err => {
+    res.status(500).json({
+      message: err.message || "Some error occurred while creating a create operation"
+    })
+  });
+
 }
 
-exports.fetchData = (req, res) => { //  getUsers
-  // Fetch all useDatas
-  UserData.find({}, (err, userData) => {
+// retrieve and return all users 
+exports.fetch = (req, res) => {
+  // Fetch all Data
+  Userdb.find({}, (err, data) => {
     if (err) {
-      return res.status(500).json({ message: err })
+      return res.status(500).json({ messsage: err })
     } else {
-      return res.status(200).json({ userData })
+      return res.status(200).json({ data })
     }
-  })
-  // Send response to client
+  });
+  
 }
 
-exports.fetchSingleData = (req, res) => {   //  getUser
-  UserData.findOne({ _id: req.params.id }, (err, userData) => {
-    if (!userData) {
-      return res.status(404).json({ message: "userData not found" })
+// retrieve and return a single user
+exports.fetchOne = (req, res) => {  
+  Userdb.findOne({ _id: req.params.id }, (err, data) => {
+    if (!data) {
+      return res.status(404).json({ message: "data not found" })
     }  
     else if (err) {
       return res.status(500).json({ message: err })
     } 
     else  {
-      return res.status(200).json({ userData })
+      return res.status(200).json({ data })
     }
   })
 }
 
-exports.updateSingleData = (req, res) => {  //  updateUser
-  UserData.findByIdAndUpdate(req.params.id, {
-    name: req.body.name,
-    email: req.body.email,
-    country: req.body.country
-  }, (err, userData) => {
-    if (!userData) {
-      return res.status(404).json({ message: "userData not found" })
+
+// Update a new identified user by user id
+exports.update = (req, res) => {
+  if(!req.body) {
+    return res
+      .status(400)
+      .json({ message: "Data to update can not be empty" })
+  }
+
+  const id = req.params.id;
+  Userdb.findByIdAndUpdate(id,req.body, {useFindAndModify: false})
+  .then(data => {
+    if(!data) {
+      res.status(404).json({ message: `Cannot Update user with ${id}. Maybe user not found!` })
+    } else {
+      res.status(200).json({ message: 'data updated successfully', data })
     }
-    else if (err) {
-      return res.status(500).json({ message: err })
-    } 
-    else {
-      userData.save((err, savedUserData) => {
-        if (savedUserData) {
-          return res.status(200).json({ message: 'userData updated successfully' })
-        }
-        else {
-          return res.status(400).json({ message: err })
-        } 
-      });
-    }
+  })
+  .catch(err => {
+    res.status(500).json({ message: "Error Update user information" })
   })
 }
 
-exports.deleteSingleData = (req, res) => {    //  deleteUser
-  UserData.findByIdAndDelete(req.params.id, (err, userData) => {
-    if(err) {
-      return res.status(500).json({ message: err })
+// Delete a user with specified user id in the request
+exports.delete = (req, res) => {
+  const id = req.params.id;
+
+  Userdb.findByIdAndDelete(id)
+  .then((data, err) => {
+    if(!data) {
+      res.status(500).json({
+        message: err
+      })
+    } else {
+      res.json({
+        message: `User with id ${id} was deleted successfully!`
+      })
     }
-    else if (!userData) {
-      return res.status(404).json({ message: "data was not found" })
-    }
-    else {
-      return res.status(200).json({ message: "data deleted successfully" })
-    }
+  })
+  .catch(err => {
+    res.status(404).json({ 
+      message: `data with id ${id} was not found!` 
+    })
   })
 }
