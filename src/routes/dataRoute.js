@@ -1,22 +1,26 @@
 const express = require('express');
 const router = express.Router();
-const DataCtrl = require('../controllers/dataController')
+const dataCtrller = require('../controllers/dataController')
 
 /**** We will be using a route to link CRUD request to the database ****/
-// POST request to /userDatas to create a new userData
-router.post('/userDatas', DataCtrl.createNewData);
+/*
+    ======= API ========
+*/ 
 
-// GET request to /userDatas to fetch all userDatas
-router.get('/userDatas', DataCtrl.fetchData);
+// POST request to /user to create a new user
+router.post('/users', dataCtrller.create);
 
-// GET request to /userDatas/:id to fetch a single userData
-router.get('/userDatas/:id', DataCtrl.fetchSingleData);
+// GET request from (/users) to fetch all users 
+router.get('/users', dataCtrller.fetch);
 
-// PUT request to /userDatas/:id to update a single userData
-router.put('/userData/:id', DataCtrl.updateSingleData);
+// GET request to /userDatas/:id to fetch a single user
+router.get('/users/:id', dataCtrller.fetchOne);
 
-// DELETE request to /userDatas/:id to delete a single userData
-router.delete('./userDatas/:id', DataCtrl.deleteSingleData);
+// PUT request to /userDatas/:id to update a single user
+router.put('/users/:id', dataCtrller.update);
+
+// DELETE request to /userDatas/:id to delete a single user
+router.delete('/users/:id', dataCtrller.delete);
 
 module.exports = router;
 
