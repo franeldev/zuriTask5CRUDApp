@@ -76,11 +76,10 @@ ERROR Messages
 | -------- | ------   | --------- | ------------------------                |
 | `GET`   | `/users`| `heroku`   | `GET request from (/users) to fetch all users` | 
 
-**<p>ERROR Messages {==} Status : `404 Not Found`</p>**
+**<p>ERROR Message {==} Status : `404 Not Found`</p>**
 | @URL Request                                   | @Data Respone                                                                             |
 | -----------------------------------             | ------------------------                                                                  |
 | ```http://localhost:9005/userss``` | ```{"message": "Cannot GET /userss"}``` |
-| ```~~{"name": "DonJazzy", "email": "jazzyu@gmail.com", "country": "Angola"}~~``` | ```~~{"message": "E11000 duplicate key error collection: ZuriCrudDb.userdbs index: email_1 dup key: { email: \"jazzyu@gmail.com\" }"~~``` |
 
 - **SUCCESS Messages {==} Status : `200 OK`**
   
@@ -150,7 +149,7 @@ http://localhost:9005/users/60a2d94d5f23373d44e938b7
 | -------- | ------   | --------- | ------------------------                |
 | `PUT`   | `/users/:id`| `heroku`   | `PUT request to /users/:id to update a single user` | 
 
-**<p>ERROR Messages {==} Status : `404 Not Found`</p>**
+**<p>ERROR Message {==} Status : `404 Not Found`</p>**
 | @URL Request                                   | @Data Respone                                                                             |
 | -----------------------------------             | ------------------------                                                                  |
 | ```http://localhost:9005/users/wrong``` | ```{"message": "data with id 'wrong' was not found!"}``` |
@@ -186,7 +185,7 @@ http://localhost:9005/users/60a2d94d5f23373d44e938b7
 | -------- | ------   | --------- | ------------------------                |
 | `DELETE`   | `/users/:id`| `none`   | `DELETE request to /users/:id to delete a single user` | 
 
-**<p>ERROR Messages {==} Status : `404 Not Found`</p>**
+**<p>ERROR Message {==} Status : `404 Not Found`</p>**
 | @URL Request                                   | @Data Respone                                                                             |
 | -----------------------------------             | ------------------------                                                                  |
 | ```http://localhost:9005/users/justsowrong``` | ```{"message": "data with id 'justsowrong' was not found!"}``` |
