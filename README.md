@@ -84,9 +84,9 @@ ERROR Messages
 
 - **SUCCESS Messages {==} Status : `200 OK`**
   
-- ***Data Request***
+- ***URL Request***
 ```
-NONE
+http://localhost:9005/users
 ```
 - ***Data Respone***
 ```
@@ -107,6 +107,38 @@ NONE
             "__v": 0
         }
     ]
+}
+```
+<p>&nbsp;</p>
+
+- **b FETCH SINGLE DATA ONLY**
+<p>Retrieve and return a single user</p>
+
+| @Method  | @Route   | @Link     | @DESCRIPTION                            | 
+| -------- | ------   | --------- | ------------------------                |
+| `GET`   | `'/users/:id`| `heroku`   | `GET request to /users/:id to fetch a single user` | 
+
+**<p>ERROR Message {==} Status : `404 Not Found`</p>**
+| @URL Request                                   | @Data Respone                                                                |
+| -----------------------------------             | ------------------------                                                    |
+| ```http://localhost:9005/users/wrongid```       | ```{"message": "data not found"}``` |
+
+- **SUCCESS Messages {==} Status : `200 OK`**
+  
+- ***URL Request***
+```
+http://localhost:9005/users/60a2d94d5f23373d44e938b7
+```
+- ***Data Respone***
+```
+{
+    "data": {
+        "_id": "60a2d94d5f23373d44e938b7",
+        "name": "Jimmy Jatt",
+        "email": "flyingjet@gmail.com",
+        "country": "Togo",
+        "__v": 0
+    }
 }
 ```
 
