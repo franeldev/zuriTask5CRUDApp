@@ -33,7 +33,7 @@ Adds a new user to the database & get the response
 
 | @Method  | @Route   | @Link     | @DESCRIPTION                            | 
 | -------- | ------   | --------- | ------------------------                |
-| `POST`   | `'/users`| `heroku`  | `request to /user to create a new user` | 
+| `POST`   | `/users`| `heroku`  | `request to /user to create a new user` | 
 
 ERROR Messages
 | @Data Request                                   | @Data Respone                                                                             |
@@ -74,7 +74,7 @@ ERROR Messages
 
 | @Method  | @Route   | @Link     | @DESCRIPTION                            | 
 | -------- | ------   | --------- | ------------------------                |
-| `GET`   | `'/users`| `heroku`   | `GET request from (/users) to fetch all users` | 
+| `GET`   | `/users`| `heroku`   | `GET request from (/users) to fetch all users` | 
 
 **<p>ERROR Messages {==} Status : `404 Not Found`</p>**
 | @URL Request                                   | @Data Respone                                                                             |
@@ -116,7 +116,7 @@ http://localhost:9005/users
 
 | @Method  | @Route   | @Link     | @DESCRIPTION                            | 
 | -------- | ------   | --------- | ------------------------                |
-| `GET`   | `'/users/:id`| `heroku`   | `GET request to /users/:id to fetch a single user` | 
+| `GET`   | `/users/:id`| `heroku`   | `GET request to /users/:id to fetch a single user` | 
 
 **<p>ERROR Message {==} Status : `404 Not Found`</p>**
 | @URL Request                                   | @Data Respone                                                                |
@@ -148,56 +148,58 @@ http://localhost:9005/users/60a2d94d5f23373d44e938b7
 
 | @Method  | @Route   | @Link     | @DESCRIPTION                            | 
 | -------- | ------   | --------- | ------------------------                |
-| `GET`   | `'/users`| `heroku`   | `GET request from (/users) to fetch all users` | 
+| `PUT`   | `/users/:id`| `heroku`   | `PUT request to /users/:id to update a single user` | 
 
 **<p>ERROR Messages {==} Status : `404 Not Found`</p>**
 | @URL Request                                   | @Data Respone                                                                             |
 | -----------------------------------             | ------------------------                                                                  |
-| ```http://localhost:9005/userss``` | ```{"message": "Cannot GET /userss"}``` |
-| ```~~{"name": "DonJazzy", "email": "jazzyu@gmail.com", "country": "Angola"}~~``` | ```~~{"message": "E11000 duplicate key error collection: ZuriCrudDb.userdbs index: email_1 dup key: { email: \"jazzyu@gmail.com\" }"~~``` |
+| ```http://localhost:9005/users/wrong``` | ```{"message": "data with id 'wrong' was not found!"}``` |
+
+- **SUCCESS Messages {==} Status : `200 OK`**
+  
+- ***Data Request***
+```
+{
+  "name": "DJ Trump",
+  "country": "Zimbabwe"
+}
+```
+- ***Data Respone***
+```
+{
+    "message": "data updated successfully",
+    "data": {
+        "_id": "60a3ee517bd3803a20460c1e",
+        "name": "DJ Trump",
+        "email": "trumpvsapala@gmail.com",
+        "country": "Zimbabwe",
+        "__v": 0
+    }
+}
+```
+<p>&nbsp;</p>
+
+### 4. Delete Data
+*<p>Delete a user with specified user id in the request</p>*
+
+| @Method  | @Route   | @Link     | @DESCRIPTION                            | 
+| -------- | ------   | --------- | ------------------------                |
+| `DELETE`   | `/users/:id`| `none`   | `DELETE request to /users/:id to delete a single user` | 
+
+**<p>ERROR Messages {==} Status : `404 Not Found`</p>**
+| @URL Request                                   | @Data Respone                                                                             |
+| -----------------------------------             | ------------------------                                                                  |
+| ```http://localhost:9005/users/justsowrong``` | ```{"message": "data with id 'justsowrong' was not found!"}``` |
 
 - **SUCCESS Messages {==} Status : `200 OK`**
   
 - ***URL Request***
 ```
-http://localhost:9005/users
+http://localhost:9005/users/60a42c30d5744f291ccbda7b
 ```
 - ***Data Respone***
 ```
 {
-    "data": [
-        {
-            "_id": "60a2aea3a043e209ecaa75f8",
-            "name": "DonJazzy",
-            "email": "jazzyu@gmail.com",
-            "country": "Angola",
-            "__v": 0
-        },
-        {
-            "_id": "60a2d94d5f23373d44e938b7",
-            "name": "Jimmy Jatt",
-            "email": "flyingjet@gmail.com",
-            "country": "Togo",
-            "__v": 0
-        }
-    ]
+    "message": "data with id '60a42c30d5744f291ccbda7b' was deleted successfully!"
 }
 ```
-
-
-
-
-
-
-
-{
-    "data": [
-        {
-            "_id": "60a2aea3a043e209ecaa75f8",
-            "name": "DonJazzy",
-            "email": "jazzyu@gmail.com",
-            "country": "Angola",
-            "__v": 0
-        }
-    ]
-}
