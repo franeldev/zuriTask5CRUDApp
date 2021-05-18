@@ -1,19 +1,36 @@
 // Create Schema
 const mongoose = require('mongoose');
-const userDataSchema = new mongoose.Schema({
+const validator = require("validator");
+
+const userSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true
+    required: true,
+    validate: {
+      validator: (val) => {
+        const valNoSpaces = val.split(' ').join('');
+        return validator.isAlpha(valNoSpaces, 'en-GB');
+        },
+        message: 'String have to contain only alphanumeric with spaces'
+      }
   },
+
   email: {
     type: String,
-    required: true
+    unique: true,
+    required: [true, "Path `email` is required"],
+    validate: {
+      validator: validator.isEmail,
+      message: '{VALUE} is not a valid email',
+      isAsync: false
+    }
   },
+
   country: {
     type: String,
     required: true
   }
 });
-const UserData = mongoose.model('UserData', userDataSchema);
+const Userdb = mongoose.model('Userdb', userSchema);
 
-module.exports = UserData;
+module.exports = Userdb;
