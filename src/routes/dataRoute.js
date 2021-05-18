@@ -16,10 +16,10 @@ router.get('/users', dataCtrller.fetch);
 // GET request to /userDatas/:id to fetch a single user
 router.get('/users/:id', dataCtrller.fetchOne);
 
-// PUT request to /userDatas/:id to update a single user
+// PUT request to /users/:id to update a single user
 router.put('/users/:id', dataCtrller.update);
 
-// DELETE request to /userDatas/:id to delete a single user
+// DELETE request to /users/:id to delete a single user
 router.delete('/users/:id', dataCtrller.delete);
 
 module.exports = router;
