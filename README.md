@@ -70,7 +70,7 @@ ERROR Messages
 ### 2. Read Data
 
 - **a FETCH ALL DATA**
-<p>Retrieve and return all users</p>
+*<p>Retrieve and return all users</p>*
 
 | @Method  | @Route   | @Link     | @DESCRIPTION                            | 
 | -------- | ------   | --------- | ------------------------                |
@@ -112,7 +112,7 @@ http://localhost:9005/users
 <p>&nbsp;</p>
 
 - **b FETCH SINGLE DATA ONLY**
-<p>Retrieve and return a single user</p>
+*<p>Retrieve and return a single user</p>*
 
 | @Method  | @Route   | @Link     | @DESCRIPTION                            | 
 | -------- | ------   | --------- | ------------------------                |
@@ -141,6 +141,51 @@ http://localhost:9005/users/60a2d94d5f23373d44e938b7
     }
 }
 ```
+<p>&nbsp;</p>
+
+### 3. Update Data
+*<p>Update a new identified user by user id</p>*
+
+| @Method  | @Route   | @Link     | @DESCRIPTION                            | 
+| -------- | ------   | --------- | ------------------------                |
+| `GET`   | `'/users`| `heroku`   | `GET request from (/users) to fetch all users` | 
+
+**<p>ERROR Messages {==} Status : `404 Not Found`</p>**
+| @URL Request                                   | @Data Respone                                                                             |
+| -----------------------------------             | ------------------------                                                                  |
+| ```http://localhost:9005/userss``` | ```{"message": "Cannot GET /userss"}``` |
+| ```~~{"name": "DonJazzy", "email": "jazzyu@gmail.com", "country": "Angola"}~~``` | ```~~{"message": "E11000 duplicate key error collection: ZuriCrudDb.userdbs index: email_1 dup key: { email: \"jazzyu@gmail.com\" }"~~``` |
+
+- **SUCCESS Messages {==} Status : `200 OK`**
+  
+- ***URL Request***
+```
+http://localhost:9005/users
+```
+- ***Data Respone***
+```
+{
+    "data": [
+        {
+            "_id": "60a2aea3a043e209ecaa75f8",
+            "name": "DonJazzy",
+            "email": "jazzyu@gmail.com",
+            "country": "Angola",
+            "__v": 0
+        },
+        {
+            "_id": "60a2d94d5f23373d44e938b7",
+            "name": "Jimmy Jatt",
+            "email": "flyingjet@gmail.com",
+            "country": "Togo",
+            "__v": 0
+        }
+    ]
+}
+```
+
+
+
 
 
 
