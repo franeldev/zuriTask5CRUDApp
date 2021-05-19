@@ -15,7 +15,7 @@ app.use(route);
 connectDB();
 
 // Create a basic express route
-app.get('/', (req, res) => res.json({ message: 'CRUD App with Database is UNDER CONSTRUCTION' }));
+app.get('/', (req, res) => res.json({ message: 'Welcoome to Zuri CRUD App payloads. Kindly visit the readme file to get the Endpoints/API but you can start with /users to read all data' }));
 
 // PORT
 const port = process.env.PORT || PORT;
