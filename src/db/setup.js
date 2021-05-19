@@ -5,12 +5,12 @@
 // Setup Mongoose
 const mongoose = require('mongoose');
 require('dotenv').config();
-const { connectionString, MONGO_URI, MONGO_LOCAL_URI } = process.env;
+const {  MONGO_URI, connectionString, MONGO_LOCAL_URI } = process.env;
 
 // Async/Await mongoose connection
 const connectDB = async () => {
   try {
-    await mongoose.connect( connectionString || MONGO_URI || MONGO_LOCAL_URI, {
+    await mongoose.connect(  MONGO_URI || connectionString || MONGO_LOCAL_URI, {
       // This property will stop unwanted warning in the console or client side
       useNewUrlParser: true,
       useCreateIndex: true,
