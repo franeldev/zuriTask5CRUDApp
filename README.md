@@ -16,8 +16,8 @@ Create Zuri Task5 CRUD app with database &amp; no authentication using Nodejs/Ex
 4. Test the 
    * [create,](##1.-Create-Data) 
    * [read,](##2.-Read-Data)
-     * [2a. fetch all](###2a.-FETCH-ALL-DATA)
-     * [2b. fetch single](###2b.-FETCH-SINGLE-DATA-ONLY)
+     * [a. fetch all](###2a.-FETCH-ALL-DATA)
+     * [b. fetch single](###2b.-FETCH-SINGLE-DATA-ONLY)
    *  [update](##3.-Update-Data) 
    *  [& delete](##4.-Delete-Data) 
    <p>result || payload || data on postman, then test it on client browser.</p>
