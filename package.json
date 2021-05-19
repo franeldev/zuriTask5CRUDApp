@@ -4,7 +4,7 @@
   "description": "Create Zuri Task5 CRUD app with database &amp; no authentication using Nodejs/Express/Mongoose",
   "main": "src/server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node src/server.js",
     "server": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
