@@ -13,7 +13,14 @@ Create Zuri Task5 CRUD app with database &amp; no authentication using Nodejs/Ex
 - Update the main path from index.js to server.js in `package.json` (optional)
 2. Create a Server
 3. Create a database connection locally, then, create it with a cloud (MongoDB Atlas) and connect it to MongoDB Compass
-4. Test the create, update & delete result || database on postman, then test it on client browser.
+4. Test the 
+   * [create,](##1.-Create-Data) 
+   * [read,](##2.-Read-Data)
+     * [2a. fetch all](###2a.-FETCH-ALL-DATA)
+     * [2b. fetch single](###2b.-FETCH-SINGLE-DATA-ONLY)
+   *  [update](##3.-Update-Data) 
+   *  [& delete](##4.-Delete-Data) 
+   <p>result || payload || data on postman, then test it on client browser.</p>
 5. Host to Heroku & test the hosted link || URL.
 6. Map out the routes here!
 
@@ -27,7 +34,7 @@ Start the server by running `npm start` or `npm run server`
 ## Endpoints
 
 Here's the URI/URL where api/service can be accessed by a client application
-### 1. Create Data
+## 1. Create Data
 
 Adds a new user to the database & get the response
 
@@ -67,9 +74,9 @@ ERROR Messages
 ```
 <p>&nbsp;</p>
 
-### 2. Read Data
+## 2. Read Data
 
-- **a FETCH ALL DATA**
+- ### 2a. FETCH ALL DATA
 *<p>Retrieve and return all users</p>*
 
 | @Method  | @Route   | @Link     | @DESCRIPTION                            | 
@@ -110,7 +117,7 @@ http://localhost:9005/users
 ```
 <p>&nbsp;</p>
 
-- **b FETCH SINGLE DATA ONLY**
+- ### 2b. FETCH SINGLE DATA ONLY
 *<p>Retrieve and return a single user</p>*
 
 | @Method  | @Route   | @Link     | @DESCRIPTION                            | 
@@ -142,7 +149,7 @@ http://localhost:9005/users/60a2d94d5f23373d44e938b7
 ```
 <p>&nbsp;</p>
 
-### 3. Update Data
+## 3. Update Data
 *<p>Update a new identified user by user id</p>*
 
 | @Method  | @Route   | @Link     | @DESCRIPTION                            | 
@@ -178,7 +185,7 @@ http://localhost:9005/users/60a2d94d5f23373d44e938b7
 ```
 <p>&nbsp;</p>
 
-### 4. Delete Data
+## 4. Delete Data
 *<p>Delete a user with specified user id in the request</p>*
 
 | @Method  | @Route   | @Link     | @DESCRIPTION                            | 
