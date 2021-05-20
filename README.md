@@ -1,5 +1,3 @@
-# ===STILL UNDER CONSTRUCTION (About to be done with...)===
-
 ## zuriTask5CRUDApp
 Create Zuri Task5 CRUD app with database &amp; no authentication using Nodejs/Express/Mongoose
 
@@ -40,9 +38,9 @@ Here's the URI/URL where api/service can be accessed by a client application
 
 Adds a new user to the database & get the response
 
-| @Method  | @Route   | @Link     | @DESCRIPTION                            | 
+| @Method  | @Params   | @Link     | @DESCRIPTION                            | 
 | -------- | ------   | --------- | ------------------------                |
-| `POST`   | `/users`| `heroku`  | `request to /user to create a new user` | 
+| `POST`   | `/users`| `none(postman)`  | `request to /user to create a new user` | 
 
 ERROR Messages
 | @Data Request                                   | @Data Respone                                                                             |
