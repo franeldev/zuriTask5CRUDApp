@@ -14,12 +14,12 @@ LINK: https://zuri-crudapp.herokuapp.com/
 2. Create a Server
 3. Create a database connection locally, then, create it with a cloud (MongoDB Atlas) and connect it to MongoDB Compass
 4. Test the 
-   * [create data,](#1.-Create-Data) 
-   * [read data,](#2.-Read-Data)
-     * [a. fetch all data](#2a.-FETCH-ALL-DATA)
-     * [b. fetch single data](#2b.-FETCH-SINGLE-DATA-ONLY)
-   *  [update data](#3.-Update-Data) 
-   *  [& delete data](#4.-Delete-Data) 
+   * [i. create data,](#1.-Create-Data) 
+   * [ii. read data,](#2.-Read-Data)
+     * [iia. fetch all data](#2a.-FETCH-ALL-DATA)
+     * [iib. fetch single data](#2b.-FETCH-SINGLE-DATA-ONLY)
+   *  [iii. update data](#3.-Update-Data) 
+   *  [ii. & delete data](#4.-Delete-Data) 
    <p>result || payload || data on postman, then test it on client browser.</p>
 5. Host to Heroku & test the hosted link || URL.
 6. Map out the routes here!
@@ -34,7 +34,7 @@ Start the server by running `npm start` or `npm run server`
 ## Endpoints
 
 Here's the URI/URL where api/service can be accessed by a client application
-## 1. Create Data
+## i. Create Data
 
 Adds a new user to the database & get the response
 
@@ -74,9 +74,9 @@ ERROR Messages
 ```
 <p>&nbsp;</p>
 
-## 2. Read Data
+## ii. Read Data
 
-- ### 2a. FETCH ALL DATA
+- ### iia. FETCH ALL DATA
 *<p>Retrieve and return all users</p>*
 
 | @Method  | @Route   | @Link     | @DESCRIPTION                            | 
@@ -117,7 +117,7 @@ https://zuri-crudapp.herokuapp.com//users
 ```
 <p>&nbsp;</p>
 
-- ### 2b. FETCH SINGLE DATA
+- ### iib. FETCH SINGLE DATA
 *<p>Retrieve and return a single user</p>*
 
 | @Method  | @Route   | @Link     | @DESCRIPTION                            | 
@@ -149,7 +149,7 @@ https://zuri-crudapp.herokuapp.com/users/60a2d94d5f23373d44e938b7
 ```
 <p>&nbsp;</p>
 
-## 3. Update Data
+## iii. Update Data
 *<p>Update a new identified user by user id</p>*
 
 | @Method  | @Route   | @Link     | @DESCRIPTION                            | 
@@ -185,7 +185,7 @@ https://zuri-crudapp.herokuapp.com/users/60a2d94d5f23373d44e938b7
 ```
 <p>&nbsp;</p>
 
-## 4. Delete Data
+## iv. Delete Data
 *<p>Delete a user with specified user id in the request</p>*
 
 | @Method  | @Route   | @Link     | @DESCRIPTION                            | 
