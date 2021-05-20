@@ -19,7 +19,7 @@ LINK: https://zuri-crudapp.herokuapp.com/
      * [iia. fetch all data](#iia-FETCH-ALL-DATA)
      * [iib. fetch single data](#iib-FETCH-SINGLE-DATA)
    *  [iii. update data](#iii-Update-Data) 
-   *  [ii. delete data](#iv-Delete-Data) 
+   *  [iv. delete data](#iv-Delete-Data) 
    <p>|| result || payload on postman, then test it on client browser.</p>
 5. Host to Heroku & test the hosted link || URL.
 6. Map out the routes here!
@@ -28,8 +28,6 @@ LINK: https://zuri-crudapp.herokuapp.com/
 Clone the repository and run `npm install` to install all the packages
 
 Start the server by running `npm start` or `npm run server`
-
-#### Action Map is UNDER CONSTRUCTION, please bear with me!
 
 ## Endpoints
 
