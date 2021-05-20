@@ -14,12 +14,12 @@ LINK: https://zuri-crudapp.herokuapp.com/
 2. Create a Server
 3. Create a database connection locally, then, create it with a cloud (MongoDB Atlas) and connect it to MongoDB Compass
 4. Test the 
-   * [i. create data,](#1.-Create-Data) 
-   * [ii. read data,](#2.-Read-Data)
-     * [iia. fetch all data](#2a.-FETCH-ALL-DATA)
-     * [iib. fetch single data](#2b.-FETCH-SINGLE-DATA-ONLY)
-   *  [iii. update data](#3.-Update-Data) 
-   *  [ii. & delete data](#4.-Delete-Data) 
+   * [i. create data,](#i-Create-Data) 
+   * [ii. read data,](#ii.-Read-Data)
+     * [iia. fetch all data](#iia.-FETCH-ALL-DATA)
+     * [iib. fetch single data](#iib.-FETCH-SINGLE-DATA-ONLY)
+   *  [iii. update data](#iii.-Update-Data) 
+   *  [ii. & delete data](#iv.-Delete-Data) 
    <p>result || payload || data on postman, then test it on client browser.</p>
 5. Host to Heroku & test the hosted link || URL.
 6. Map out the routes here!
