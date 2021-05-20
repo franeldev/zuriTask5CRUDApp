@@ -19,8 +19,8 @@ LINK: https://zuri-crudapp.herokuapp.com/
      * [iia. fetch all data](#iia-FETCH-ALL-DATA)
      * [iib. fetch single data](#iib-FETCH-SINGLE-DATA)
    *  [iii. update data](#iii-Update-Data) 
-   *  [ii. & delete data](#iv-&Delete-Data) 
-   <p>result || payload || data on postman, then test it on client browser.</p>
+   *  [ii. delete data](#iv-Delete-Data) 
+   <p>|| result || payload on postman, then test it on client browser.</p>
 5. Host to Heroku & test the hosted link || URL.
 6. Map out the routes here!
 
@@ -185,7 +185,7 @@ https://zuri-crudapp.herokuapp.com/users/60a2d94d5f23373d44e938b7
 ```
 <p>&nbsp;</p>
 
-## iv. & Delete Data
+## iv. Delete Data
 *<p>Delete a user with specified user id in the request</p>*
 
 | @Method  | @Route   | @Link     | @DESCRIPTION                            | 
