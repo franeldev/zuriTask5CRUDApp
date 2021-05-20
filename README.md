@@ -81,18 +81,18 @@ ERROR Messages
 
 | @Method  | @Route   | @Link     | @DESCRIPTION                            | 
 | -------- | ------   | --------- | ------------------------                |
-| `GET`   | `/users`| `heroku`   | `GET request from (/users) to fetch all users` | 
+| `GET`   | `/users`| `https://zuri-crudapp.herokuapp.com/users`   | `GET request from (/users) to fetch all users` | 
 
 **<p>ERROR Message {==} Status : `404 Not Found`</p>**
 | @URL Request                                   | @Data Respone                                                                             |
 | -----------------------------------             | ------------------------                                                                  |
-| ```http://localhost:9005/userss``` | ```{"message": "Cannot GET /userss"}``` |
+| ```https://zuri-crudapp.herokuapp.com/userss``` | ```{"message": "Cannot GET /userss"}``` |
 
 - **SUCCESS Messages {==} Status : `200 OK`**
   
 - ***URL Request***
 ```
-http://localhost:9005/users
+https://zuri-crudapp.herokuapp.com//users
 ```
 - ***Data Respone***
 ```
@@ -117,23 +117,23 @@ http://localhost:9005/users
 ```
 <p>&nbsp;</p>
 
-- ### 2b. FETCH SINGLE DATA ONLY
+- ### 2b. FETCH SINGLE DATA
 *<p>Retrieve and return a single user</p>*
 
 | @Method  | @Route   | @Link     | @DESCRIPTION                            | 
 | -------- | ------   | --------- | ------------------------                |
-| `GET`   | `/users/:id`| `heroku`   | `GET request to /users/:id to fetch a single user` | 
+| `GET`   | `/users/:id`| `https://zuri-crudapp.herokuapp.com/id`   | `GET request to /users/:id to fetch a single user` | 
 
 **<p>ERROR Message {==} Status : `404 Not Found`</p>**
 | @URL Request                                   | @Data Respone                                                                |
 | -----------------------------------             | ------------------------                                                    |
-| ```http://localhost:9005/users/wrongid```       | ```{"message": "data not found"}``` |
+| ```https://zuri-crudapp.herokuapp.com/users/wrongid```       | ```{"message": "data not found"}``` |
 
 - **SUCCESS Messages {==} Status : `200 OK`**
   
 - ***URL Request***
 ```
-http://localhost:9005/users/60a2d94d5f23373d44e938b7
+https://zuri-crudapp.herokuapp.com/users/60a2d94d5f23373d44e938b7
 ```
 - ***Data Respone***
 ```
@@ -154,12 +154,12 @@ http://localhost:9005/users/60a2d94d5f23373d44e938b7
 
 | @Method  | @Route   | @Link     | @DESCRIPTION                            | 
 | -------- | ------   | --------- | ------------------------                |
-| `PUT`   | `/users/:id`| `heroku`   | `PUT request to /users/:id to update a single user` | 
+| `PUT`   | `/users/:id`| `http://localhost:9005 (via [postman)`   | `PUT request to /users/:id to update a single user` | 
 
 **<p>ERROR Message {==} Status : `404 Not Found`</p>**
 | @URL Request                                   | @Data Respone                                                                             |
 | -----------------------------------             | ------------------------                                                                  |
-| ```http://localhost:9005/users/wrong``` | ```{"message": "data with id 'wrong' was not found!"}``` |
+| ```https://zuri-crudapp.herokuapp.com/users/wrong``` | ```{"message": "data with id 'wrong' was not found!"}``` |
 
 - **SUCCESS Messages {==} Status : `200 OK`**
   
@@ -190,7 +190,7 @@ http://localhost:9005/users/60a2d94d5f23373d44e938b7
 
 | @Method  | @Route   | @Link     | @DESCRIPTION                            | 
 | -------- | ------   | --------- | ------------------------                |
-| `DELETE`   | `/users/:id`| `none`   | `DELETE request to /users/:id to delete a single user` | 
+| `DELETE`   | `/users/:id`| `(via postman)`   | `DELETE request to /users/:id to delete a single user` | 
 
 **<p>ERROR Message {==} Status : `404 Not Found`</p>**
 | @URL Request                                   | @Data Respone                                                                             |
@@ -201,6 +201,7 @@ http://localhost:9005/users/60a2d94d5f23373d44e938b7
   
 - ***URL Request***
 ```
+api request through Postman
 http://localhost:9005/users/60a42c30d5744f291ccbda7b
 ```
 - ***Data Respone***
